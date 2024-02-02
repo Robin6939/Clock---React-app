@@ -1,22 +1,21 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Clock from './Clock';
 
 function App() {
+  const [showClock, setShowClock] = useState(true);
+  const [is24Hour, setIs24Hour] = useState(false);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {showClock && <Clock is24Hour={is24Hour} />}
+        <button onClick={() => setShowClock(!showClock)}>
+          {showClock ? 'Hide Clock' : 'Show Clock'}
+        </button>
+        <button onClick={() => setIs24Hour(!is24Hour)}>
+          Switch to {is24Hour ? '12-hour' : '24-hour'} format
+        </button>
       </header>
     </div>
   );

@@ -11,7 +11,7 @@ function App() {
       <header className="App-header">
         {showClock && <Clock is24Hour={is24Hour} />}
         <button onClick={() => setShowClock(!showClock)}>
-          {showClock ? 'Hide Clock' : 'Show Clock'}
+          {showClock ? 'Clock Clock' : 'Show Clock'}
         </button>
         <button onClick={() => setIs24Hour(!is24Hour)}>
           Switch to {is24Hour ? '12-hour' : '24-hour'} format
